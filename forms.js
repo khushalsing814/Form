@@ -1,7 +1,4 @@
 
-
-
-
 let namee = sessionStorage.getItem('firstname') ? sessionStorage.getItem('firstname') : ''
 console.log(namee);
 if (namee != '') {
