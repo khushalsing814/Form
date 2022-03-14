@@ -24,23 +24,21 @@
         color: red;
     }
 
-    /* body  */
-    /* background-image: url('imgblue.jpg');
-        background-repeat: no-repeat;
-        width: 100px; */
-
     #y {
-        top: 28px;
+        top: 94px;
         position: relative;
+        padding: 12px;
+        border-radius: 8px;
     }
 
     @media screen and (max-width: 567px) {
         #y {
-            width: 300px !important;
+            width: 330px !important;
+            padding: 6px;
+            border-radius: 8px;
         }
     }
 </style>
-
 
 <body style="background: #63738a;">
     <div id="header"></div>
@@ -82,24 +80,14 @@
             <div class="mt-3 text-center">
                 Already Heaving an Account?
                 <a href="login.html">Login</a>
-                <!-- <a class="btn btn-outline-danger" onclick="document.location='login.html'">Login</a> -->
-            </div>
-
-            <div class="mt-3 text-center">
-                Forgotpassword?
-                <a href="checkpassword.html">Forgotpassword</a>
-                <!-- <a class="btn btn-outline-danger" onclick="document.location='login.html'">Login</a> -->
             </div>
             <div class="alert alert-danger text-center" id="result" role="alert" style="visibility: hidden;"></div>
         </form>
     </div>
-
     <script>
-
         if (localStorage.getItem('firstname') != null || localStorage.getItem('firstname') != undefined) {
             window.location.href = "welcome.html";
         }
-
         // showpassword
         function myFunctionn() {
             var x = document.getElementById("pass");
@@ -135,19 +123,13 @@
 
         inputbutton.addEventListener('click', inputbuttonfun);
         function inputbuttonfun() {
-
             ffirstName = ffirstName.value;
             lastNme = lastNme.value;
             eemail = eemail.value;
-
             pass = pass.value;
             encodedString = window.btoa(pass);
-            console.log(encodedString)
-
             cpass = cpass.value;
             decodeString = window.btoa(cpass);
-            console.log(decodeString)
-
             if (ffirstName.trim() != 0 && lastNme.trim() != 0 && eemail.trim() != 0 && encodedString.trim() != 0 && decodeString.trim() != 0) {
                 if (encodedString === decodeString) {
                     if (localStorage.getItem('studentsRecords') == null) {
@@ -177,15 +159,9 @@
                 error[4].innerHTML = " *Password and Confirm password should match!";
             }
         }
-
-
         $(function () {
             $("#header").load("header.html");
-            // $("#footer").load("login.html");
-
         });
-
     </script>
 </body>
-
 </html>
