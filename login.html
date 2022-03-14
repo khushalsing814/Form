@@ -11,7 +11,7 @@
 </head>
 <style>
     #y {
-        top: 120px;
+        top: 84px;
         position: relative;
         border-radius: 8px;
     }
@@ -33,7 +33,7 @@
                 <input type="text" id="eemail" class="form-control" placeholder="Enter your Email" required><b><span
                         class="errorfunction"></span></b>
             </div>
-            <div class="text-center mt-3">
+            <div class=" mt-3">
                 <input type="password" id="ppass" class="form-control" placeholder="Enter your Password" required>
                 <b><span class="errorfunction"></span></b>
                 <input type="checkbox" onclick="myFunctionn()">Show Password
@@ -52,7 +52,7 @@
         <script>
             // showpassword
             function myFunctionn() {
-                var x = document.getElementById("pass");
+                var x = document.getElementById("ppass");
                 if (x.type === "password") {
                     x.type = "text";
                 } else {
@@ -69,7 +69,6 @@
 
             if (localStorage.getItem('firstname') != null || localStorage.getItem('firstname') != undefined) {
                 window.location.href = "welcome.html";
-
             }
             let loginfunction = document.getElementById('loginfunction');
             loginfunction.addEventListener('click', loginfun);
