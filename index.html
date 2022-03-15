@@ -19,6 +19,12 @@
         box-sizing: border-box;
     }
 
+    #all_field {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+    }
+
     #results,
     span {
         color: red;
@@ -52,6 +58,7 @@
 
         <p class="text-center">Create your account. It's free and only takes a minute.</p>
         <form>
+            <div id="all_field"></div>
             <div class="row g-2">
                 <div class="col-6">
                     <input type="text" id="fname" class="form-control" placeholder="First Name"><b><span
@@ -144,8 +151,7 @@
                     } else {
                         let string = localStorage.getItem('studentsRecords');
                         let array = JSON.parse(string);
-                        if (array.some((v) => { return v.email == eemail && v.firstname == ffirstName })) {
-
+                        if (array.some((v) => { return v.email == eemail && v.firstname == ffirstName })) {  //check duplicate value
                             let a = document.getElementById('result');
                             a.style.visibility = 'visible';
                             a.innerHTML = "Sorry!! this Data Is already Exists In Datase";
@@ -158,9 +164,22 @@
                             window.location = 'login.html';
                         }
                     }
+                } else {
+                    let op = document.getElementById('all_field');
+                    op.style.visibility = 'visible';
+                    op.innerHTML = " *Your Password and Confirm password not matched!";
+                    setTimeout(() => {
+                        op.style.visibility = 'hidden';
+                    }, 3000);
+
                 }
             } else {
-                error[4].innerHTML = " *Password and Confirm password should match!";
+                let op = document.getElementById('all_field');
+                op.style.visibility = 'visible';
+                op.innerHTML = " *All Field is required!";
+                setTimeout(() => {
+                    op.style.visibility = 'hidden';
+                }, 3000);
             }
         }
         $(function () {
