@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,10 +34,13 @@
         }
     }
 </style>
-
+<script>
+    if (localStorage.getItem('firstname') == null || localStorage.getItem('firstname') == undefined) {
+        window.location.href = "login.html";
+    }
+</script>
 
 <body>
-
     <body style="background: #63738a;">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed; width: 100%; top: 0px;">
             <div class="container-fluid">
@@ -47,13 +52,6 @@
                 </button>
             </div>
         </nav>
-
-
-    <script>
-        if (localStorage.getItem('firstname') == null || localStorage.getItem('firstname') == undefined) {
-            window.location.href = "login.html";
-        }
-    </script>
     <div class="row" style="float: right; margin-top: 8px; margin-right: 0px;">
         <div class="col">
             <div class="dropdown">
